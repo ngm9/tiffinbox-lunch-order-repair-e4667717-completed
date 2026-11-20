@@ -40,7 +40,7 @@ export default function MenuList({ selectedDishId, onSelectDish }) {
       <label className="veg-toggle">
         <input
           type="checkbox"
-          checked={vegOnly}
+          checked={true}
           onChange={(e) => setVegOnly(e.target.checked)}
         />
         Veg only

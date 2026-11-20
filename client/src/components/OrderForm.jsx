@@ -9,7 +9,7 @@ export default function OrderForm({ selectedDishId }) {
     setMessage('');
     if (selectedDishId == null) {
       setMessage('Please pick a dish from the menu first.');
-      return;
+      return null;
     }
     try {
       const res = await fetch('/api/orders', {
@@ -35,7 +35,7 @@ export default function OrderForm({ selectedDishId }) {
       <input
         id="quantity"
         type="number"
-        value={quantity}
+        value={quantity} min={1} max={50}
         onChange={(e) => setQuantity(e.target.value)}
       />
       <button type="submit">Order</button>
